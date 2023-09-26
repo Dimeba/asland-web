@@ -1,1 +1,104 @@
 @use '@/app/base';
+
+.header {
+	background-color: white;
+	padding: 1.5rem 0;
+	position: fixed;
+	width: 100%;
+}
+
+.headerContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+
+	.navigation {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	p {
+		font-size: 1rem;
+		color: base.$dark1;
+		position: relative;
+	}
+
+	p:hover {
+		color: base.$brand;
+	}
+
+	p:after {
+		content: '';
+		background-color: base.$brand;
+		position: absolute;
+		width: 0;
+		height: 2px;
+		right: 0;
+		display: block;
+		transition: width 0.2s ease;
+		-webkit-transition: width 0.2s ease;
+	}
+
+	p:hover:after {
+		width: 100%;
+		left: 0;
+	}
+}
+
+.logoContainer {
+	height: 1.5rem;
+	aspect-ratio: 5 / 1;
+}
+
+.loginButton {
+	background-color: base.$brand;
+	color: white;
+	padding: 10px 20px;
+	font-size: 1rem;
+	border: none;
+	cursor: pointer;
+}
+
+.loginButton:hover {
+	background-color: base.$dark1;
+}
+
+.blurredText {
+	color: base.$light2 !important;
+}
+
+.hamburger {
+	display: none;
+	height: 24px;
+	align-items: center;
+	overflow: hidden;
+	transform: translateX(12px);
+}
+
+@media screen and (max-width: 1024px) {
+	.hamburger {
+		display: flex;
+	}
+
+	.navigation {
+		width: 100%;
+		padding: 5rem 0 2rem 0;
+		flex-direction: column;
+	}
+
+	.loginButtonContainer {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 3rem;
+	}
+
+	.hidden {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+}
