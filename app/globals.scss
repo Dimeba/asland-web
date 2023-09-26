@@ -1,0 +1,76 @@
+@use 'base';
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: base.$light1;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: 0.3s;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+
+h1 {
+	font-family: 'Lora', serif;
+	font-size: 5rem;
+	font-weight: 400;
+}
+
+h2 {
+	font-family: 'Lora', serif;
+	font-size: 3rem;
+	font-weight: 400;
+}
+
+h3 {
+	font-family: 'Lora', serif;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+h4 {
+	font-family: 'Lora', serif;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+h5 {
+	font-family: 'Lora', serif;
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+p {
+	color: base.$dark1;
+}
+
+.largeP {
+	font-size: 1.25rem;
+}
+
+.smallP {
+	font-size: 0.8rem;
+}
+
+a {
+	text-decoration: none;
+	width: fit-content;
+}
+
+// Sections
+
+.sectionContainer {
+	width: 1440px;
+	max-width: 90%;
+	margin: 0 auto;
+}

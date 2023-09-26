@@ -1,0 +1,27 @@
+@use '@/app/base';
+
+.footer {
+	background-color: base.$dark1;
+	padding: 1.8rem 0;
+
+	* {
+		color: base.$light1;
+	}
+}
+
+.footerContainer {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
