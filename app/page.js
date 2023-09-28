@@ -1,8 +1,11 @@
 export default function Home() {
 	return (
 		<main>
-			<h3>First Commit with basic styles</h3>
-			<p>Basic paragraph</p>
+			<section>
+				<div className='sectionContainer'>
+					<h2>Our People</h2>
+				</div>
+			</section>
 		</main>
 	)
 }
