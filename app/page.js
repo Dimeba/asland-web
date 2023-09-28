@@ -21,6 +21,7 @@ export default async function Home() {
 			<Hero
 				video={pageContent.fields.video.fields.file.url}
 				videoPlaceholder={pageContent.fields.videoPlaceholder.fields.file.url}
+				heroText={pageContent.fields.heroText}
 			/>
 		</main>
 	)
