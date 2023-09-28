@@ -1,0 +1,14 @@
+@use '@/app/base';
+
+.hero {
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+
+	video {
+		min-height: 100vh;
+		min-width: 100%;
+		z-index: -1;
+		position: relative;
+	}
+}

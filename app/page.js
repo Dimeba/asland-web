@@ -1,11 +1,27 @@
-export default function Home() {
+// contentful
+import { createClient } from 'contentful'
+
+// components
+import Hero from '@/components/homepage/Hero'
+
+export default async function Home() {
+	const client = createClient({
+		space: process.env.space,
+		accessToken: process.env.accessToken
+	})
+
+	const home = await client.getEntries({
+		content_type: 'homepage'
+	})
+
+	const pageContent = home.items[0]
+
 	return (
 		<main>
-			<section>
-				<div className='sectionContainer'>
-					<h2>Our People</h2>
-				</div>
-			</section>
+			<Hero
+				video={pageContent.fields.video.fields.file.url}
+				videoPlaceholder={pageContent.fields.videoPlaceholder.fields.file.url}
+			/>
 		</main>
 	)
 }

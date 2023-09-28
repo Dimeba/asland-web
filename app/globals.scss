@@ -94,3 +94,9 @@ section {
 	max-width: 90%;
 	margin: 0 auto;
 }
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(1fr, 12);
+	grid-gap: 2rem;
+}

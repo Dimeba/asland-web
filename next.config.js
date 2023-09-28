@@ -5,7 +5,7 @@ const nextConfig = {
 		accessToken: process.env.CONTENTFUL_ACCESS_KEY
 	},
 	images: {
-		domains: ['images.ctfassets.net']
+		domains: ['images.ctfassets.net', 'videos.ctfassets.net']
 	}
 }
 
