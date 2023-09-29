@@ -3,6 +3,10 @@
 // contentful
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
+// components
+import ImageContainer from '../global/ImageContainer'
+import Link from 'next/link'
+
 // styles
 import styles from './Hero.module.scss'
 
@@ -14,16 +18,23 @@ const Hero = ({ video, videoPlaceholder, heroText }) => {
 				loop
 				poster={'https:' + videoPlaceholder}
 				muted
-				playsinline
+				playsInline
 				preload='auto'
 			>
 				<source src={'https:' + video} type='video/mp4' />
-				{/* <source src='./hero.mp4' type='video/mp4' /> */}
 			</video>
 
 			<div className={styles.heroText}>
 				{documentToReactComponents(heroText)}
 			</div>
+
+			<Link href='/#about'>
+				<ImageContainer
+					src='./arrow-down.svg'
+					className={styles.arrow}
+					alt='Next section button'
+				/>
+			</Link>
 		</section>
 	)
 }

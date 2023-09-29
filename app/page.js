@@ -3,6 +3,7 @@ import { createClient } from 'contentful'
 
 // components
 import Hero from '@/components/homepage/Hero'
+import About from '@/components/homepage/About'
 
 export default async function Home() {
 	const client = createClient({
@@ -23,6 +24,7 @@ export default async function Home() {
 				videoPlaceholder={pageContent.fields.videoPlaceholder.fields.file.url}
 				heroText={pageContent.fields.heroText}
 			/>
+			<About />
 		</main>
 	)
 }

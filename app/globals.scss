@@ -100,3 +100,12 @@ section {
 	grid-template-columns: repeat(1fr, 12);
 	grid-gap: 2rem;
 }
+
+@media screen and (max-width: 1024px) {
+	h1 {
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+}

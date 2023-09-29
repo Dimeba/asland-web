@@ -48,9 +48,9 @@ const Header = () => {
 				<Link href='/'>
 					<ImageContainer
 						src='./logo.svg'
-						styles={styles.logoContainer}
-						fit='contain'
-						priority={true}
+						className={styles.logoContainer}
+						contain
+						priority
 						alt='Logo'
 					/>
 				</Link>
