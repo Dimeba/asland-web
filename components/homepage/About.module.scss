@@ -1,0 +1,45 @@
+@use '@/app/base';
+
+.about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2rem;
+	align-items: center;
+}
+
+.image {
+	min-height: 768px;
+}
+
+.text {
+	width: 90%;
+	max-width: 720px;
+
+	hr {
+		margin: 2rem 0;
+		width: 5rem;
+		height: 2px !important;
+		background: base.$brand;
+		border: none;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.image,
+	.text {
+		grid-column: span 2;
+	}
+
+	.image {
+		min-height: auto;
+		aspect-ratio: 16 / 10;
+	}
+
+	.text {
+		margin: 0 auto;
+		max-width: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+}

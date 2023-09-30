@@ -24,7 +24,11 @@ export default async function Home() {
 				videoPlaceholder={pageContent.fields.videoPlaceholder.fields.file.url}
 				heroText={pageContent.fields.heroText}
 			/>
-			<About />
+			<About
+				aboutImage={pageContent.fields.aboutImage.fields.file.url}
+				missionText={pageContent.fields.missionText}
+				aboutText={pageContent.fields.aboutText}
+			/>
 		</main>
 	)
 }
