@@ -16,6 +16,7 @@
 		"react": "latest",
 		"react-dom": "latest",
 		"react-player": "^2.13.0",
+		"react-transition-group": "^4.4.5",
 		"sass": "^1.68.0"
 	}
 }

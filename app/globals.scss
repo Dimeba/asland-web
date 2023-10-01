@@ -97,8 +97,24 @@ section {
 
 .grid {
 	display: grid;
-	grid-template-columns: repeat(1fr, 12);
+	// grid-template-columns: repeat(12, 1fr);
 	grid-gap: 2rem;
+}
+
+.sectionDark {
+	background-color: base.$dark2;
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: white;
+	}
+
+	p {
+		color: base.$light1;
+	}
 }
 
 @media screen and (max-width: 1024px) {

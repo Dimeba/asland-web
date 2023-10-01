@@ -4,6 +4,7 @@ import { createClient } from 'contentful'
 // components
 import Hero from '@/components/homepage/Hero'
 import About from '@/components/homepage/About'
+import Partners from '@/components/homepage/Partners'
 
 export default async function Home() {
 	const client = createClient({
@@ -29,6 +30,7 @@ export default async function Home() {
 				missionText={pageContent.fields.missionText}
 				aboutText={pageContent.fields.aboutText}
 			/>
+			<Partners />
 		</main>
 	)
 }
