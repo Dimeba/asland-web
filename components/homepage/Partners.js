@@ -6,29 +6,12 @@ import styles from './Partners.module.scss'
 // components
 import ImageContainer from '../global/ImageContainer'
 import Slider from '../global/Slider'
+import Link from 'next/link'
 
 // hooks
 import { useState } from 'react'
 
-// temp list
-const partners = [
-	'/partner-sample.png',
-	'/partner-sample.png',
-	'/partner-sample.png',
-	'/partner-sample.png',
-	'/partner-sample.png',
-	'/partner-sample.png',
-	'/logo.svg',
-	'/logo.svg',
-	'/logo.svg',
-	'/logo.svg',
-	'/logo.svg',
-	'/logo.svg',
-	'/partner-sample.png',
-	'/partner-sample.png'
-]
-
-const Partners = () => {
+const Partners = ({ partners }) => {
 	const [current, setCurrent] = useState(0)
 	const columns = 6
 	const first = current * columns
@@ -46,13 +29,16 @@ const Partners = () => {
 					columns={columns}
 					content={partners}
 				>
-					{partners.slice(first, last).map((item, index) => (
-						<div key={index} className={styles.partnersImageContainer}>
-							<ImageContainer
-								src={item}
-								className={styles.partnerImage}
-								contain
-							/>
+					{partners.slice(first, last).map(item => (
+						<div key={item.sys.id} className={styles.partnersImageContainer}>
+							<Link href={item.fields.link} target='_blank'>
+								<ImageContainer
+									src={'https:' + item.fields.logo.fields.file.url}
+									className={styles.partnerImage}
+									contain
+									alt={item.fields.name}
+								/>
+							</Link>
 						</div>
 					))}
 				</Slider>

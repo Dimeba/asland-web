@@ -31,7 +31,7 @@ export default async function Home() {
 				missionText={pageContent.fields.missionText}
 				aboutText={pageContent.fields.aboutText}
 			/>
-			<Partners />
+			<Partners partners={pageContent.fields.partners} />
 			<People />
 		</main>
 	)
