@@ -15,27 +15,27 @@ const Header = () => {
 	const menu = [
 		{
 			text: 'About',
-			url: '/#about'
+			url: '#about'
 		},
 		{
 			text: 'People',
-			url: '/#people'
+			url: '#people'
 		},
 		{
 			text: 'Investments',
-			url: '/#investments'
+			url: '#investments'
 		},
 		{
 			text: 'Venture+',
-			url: '/#venture'
+			url: '#venture'
 		},
 		{
 			text: 'News',
-			url: '/#news'
+			url: '#news'
 		},
 		{
 			text: 'Contact',
-			url: '/#contact'
+			url: '#contact'
 		}
 	]
 

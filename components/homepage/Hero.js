@@ -28,7 +28,7 @@ const Hero = ({ video, videoPlaceholder, heroText }) => {
 				{documentToReactComponents(heroText)}
 			</div>
 
-			<Link href='/#about'>
+			<Link href='#about'>
 				<ImageContainer
 					src='./arrow-down.svg'
 					className={styles.arrow}
