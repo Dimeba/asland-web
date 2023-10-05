@@ -15,27 +15,27 @@ const Header = () => {
 	const menu = [
 		{
 			text: 'About',
-			url: '#about'
+			url: '/#about'
 		},
 		{
 			text: 'People',
-			url: '#people'
+			url: '/#people'
 		},
 		{
 			text: 'Investments',
-			url: '#investments'
+			url: '/#investments'
 		},
 		{
 			text: 'Venture+',
-			url: '#venture'
+			url: '/#venture'
 		},
 		{
 			text: 'News',
-			url: '#news'
+			url: '/#news'
 		},
 		{
 			text: 'Contact',
-			url: '#contact'
+			url: '/#contact'
 		}
 	]
 
@@ -71,7 +71,7 @@ const Header = () => {
 
 				<nav className={`${styles.navigation} ${!openMenu && styles.hidden}`}>
 					{menu.map((item, index) => (
-						<Link
+						<a
 							onMouseEnter={() => setHoveredItem(index)}
 							onMouseLeave={() => setHoveredItem(null)}
 							key={index}
@@ -86,7 +86,7 @@ const Header = () => {
 							>
 								{item.text}
 							</p>
-						</Link>
+						</a>
 					))}
 				</nav>
 
