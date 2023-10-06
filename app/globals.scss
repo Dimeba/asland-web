@@ -51,6 +51,7 @@ h4 {
 	font-family: 'Lora', serif;
 	font-size: 1.5rem;
 	font-weight: 500;
+	margin-bottom: 1rem;
 }
 
 h5 {
@@ -75,6 +76,7 @@ p {
 a {
 	text-decoration: none;
 	width: fit-content;
+	color: inherit;
 }
 
 .richTextContainer {
@@ -90,14 +92,14 @@ section {
 }
 
 .sectionContainer {
-	width: 1440px;
+	width: 1600px;
 	max-width: 90%;
 	margin: 0 auto;
 }
 
 .grid {
 	display: grid;
-	// grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 2rem;
 }
 
@@ -115,6 +117,14 @@ section {
 	p {
 		color: base.$light1;
 	}
+}
+
+hr {
+	margin: 2rem 0;
+	width: 5rem;
+	height: 2px !important;
+	background: base.$brand;
+	border: none;
 }
 
 @media screen and (max-width: 1024px) {

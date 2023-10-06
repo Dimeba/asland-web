@@ -6,6 +6,7 @@ import Hero from '@/components/homepage/Hero'
 import About from '@/components/homepage/About'
 import Partners from '@/components/homepage/Partners'
 import People from '@/components/homepage/People'
+import Investments from '@/components/homepage/Investments'
 
 export default async function Home() {
 	const client = createClient({
@@ -32,7 +33,8 @@ export default async function Home() {
 				aboutText={pageContent.fields.aboutText}
 			/>
 			<Partners partners={pageContent.fields.partners} />
-			<People />
+			<People people={pageContent.fields.people} />
+			<Investments />
 		</main>
 	)
 }

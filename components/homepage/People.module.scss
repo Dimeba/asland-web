@@ -1,1 +1,144 @@
 @use '@/app/base';
+
+.teamColumn {
+	grid-column: span 6;
+	scroll-margin-top: 100px;
+}
+
+.bio {
+	margin-bottom: 2rem;
+}
+
+.bioColumn {
+	grid-column: span 6;
+}
+
+.bioPhoto {
+	width: 50%;
+	aspect-ratio: 1 / 1;
+}
+
+.team {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 2rem;
+	grid-auto-rows: min-content;
+}
+
+.teamCard {
+	grid-column: span 3;
+	position: relative;
+	cursor: pointer;
+
+	hr {
+		width: 0;
+		margin: 0;
+		height: 6px !important;
+		position: relative;
+		bottom: 1rem;
+	}
+
+	h5 {
+		font-size: 1rem;
+		margin-bottom: 0.2rem;
+	}
+
+	p {
+		font-size: 0.8rem;
+	}
+
+	.showBioLink {
+		color: base.$brand;
+		margin-top: 0.5rem;
+		font-weight: 600;
+		display: none;
+	}
+}
+
+.teamCard:hover hr {
+	width: 100%;
+}
+
+.teamCard:hover .overlay {
+	opacity: 0;
+}
+
+.active {
+	hr {
+		width: 100% !important;
+	}
+
+	.overlay {
+		opacity: 0 !important;
+	}
+}
+
+.teamPhoto {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	margin-bottom: calc(1rem - 6px);
+}
+
+.overlay {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	background-color: base.$dark1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	mix-blend-mode: color;
+	opacity: 1;
+}
+
+.linkedin {
+	margin-top: 2rem;
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+
+	p {
+		color: base.$brand;
+		font-weight: 600;
+	}
+
+	.linkArrow {
+		height: 1rem;
+		aspect-ratio: 1 / 2;
+	}
+}
+
+@media screen and (max-width: 1440px) {
+	.teamCard {
+		grid-column: span 4;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.teamColumn {
+		grid-column: span 12;
+	}
+
+	.teamCard {
+		h5 {
+			font-size: 1.2rem;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+	}
+
+	.showBioLink {
+		display: block !important;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.bioColumn {
+		grid-column: span 12;
+	}
+
+	.teamCard {
+		grid-column: span 12;
+	}
+}

@@ -1,0 +1,42 @@
+@use '@/app/base';
+
+.highlights {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	row-gap: 2rem;
+}
+
+.highlight {
+	grid-column: span 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-right: 2px solid base.$brand;
+
+	h2 {
+		margin-bottom: 0;
+	}
+}
+
+.highlight:nth-of-type(4) {
+	border-right: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.highlight {
+		grid-column: span 6;
+	}
+
+	.highlight:nth-of-type(2) {
+		border-right: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.highlight {
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}

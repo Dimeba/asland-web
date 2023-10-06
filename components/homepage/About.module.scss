@@ -13,15 +13,7 @@
 
 .text {
 	width: 90%;
-	max-width: 720px;
-
-	hr {
-		margin: 2rem 0;
-		width: 5rem;
-		height: 2px !important;
-		background: base.$brand;
-		border: none;
-	}
+	max-width: 800px;
 }
 
 @media screen and (max-width: 1024px) {
