@@ -6,7 +6,6 @@ html {
 }
 
 body {
-	background-color: base.$light1;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -89,6 +88,7 @@ a {
 
 section {
 	padding: 100px 0;
+	background-color: base.$light1;
 }
 
 .sectionContainer {

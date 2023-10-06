@@ -5,6 +5,8 @@
 	position: relative;
 	overflow: hidden;
 	max-height: 100vh;
+	display: flex;
+	background-color: transparent;
 
 	video {
 		min-height: 100vh;
@@ -102,5 +104,19 @@
 	}
 	75% {
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.hero {
+		a {
+			bottom: 100px;
+		}
 	}
 }
