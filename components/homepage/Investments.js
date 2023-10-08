@@ -1,6 +1,6 @@
 import styles from './Investments.module.scss'
 
-const Investments = () => {
+const Investments = ({ highlights }) => {
 	return (
 		<section id='investments' className='sectionDark'>
 			<div className='sectionContainer'>
@@ -8,22 +8,12 @@ const Investments = () => {
 
 				{/* Highlights */}
 				<div className={`sectionContainer ${styles.highlights}`}>
-					<div className={styles.highlight}>
-						<h2>4</h2>
-						<p className='smallP'>MARKETS</p>
-					</div>
-					<div className={styles.highlight}>
-						<h2>$525m</h2>
-						<p className='smallP'>EQUITY INVESTED</p>
-					</div>
-					<div className={styles.highlight}>
-						<h2>10,445</h2>
-						<p className='smallP'>RESIDENTIAL UNITS</p>
-					</div>
-					<div className={styles.highlight}>
-						<h2>423,165</h2>
-						<p className='smallP'>RETAIL SF</p>
-					</div>
+					{highlights.map(highlight => (
+						<div className={styles.highlight} key={highlight.sys.id}>
+							<h2>{highlight.fields.value}</h2>
+							<p className='smallP'>{highlight.fields.label}</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</section>

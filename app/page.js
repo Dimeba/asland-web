@@ -34,7 +34,7 @@ export default async function Home() {
 			/>
 			<Partners partners={pageContent.fields.partners} />
 			<People people={pageContent.fields.people} />
-			<Investments />
+			<Investments highlights={pageContent.fields.highlights} />
 		</main>
 	)
 }
