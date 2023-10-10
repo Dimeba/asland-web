@@ -29,6 +29,7 @@ const Investments = ({ highlights }) => {
 					setCurrent={setCurrent}
 					columns={columns}
 					content={investments}
+					showArrows
 				></Slider>
 
 				{/* Highlights */}

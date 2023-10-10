@@ -18,10 +18,26 @@
 }
 
 .sliderContent {
-	width: calc(100% - 4rem);
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 2rem;
+
+	> * {
+		animation: slideIn 1s ease-out;
+	}
+}
+
+// animation
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(200%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0%);
+	}
 }
 
 @media screen and (max-width: 1024px) {

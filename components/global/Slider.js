@@ -9,7 +9,15 @@ import ImageContainer from './ImageContainer'
 // hooks
 import { useState, useEffect } from 'react'
 
-const Slider = ({ children, content, current, setCurrent, columns }) => {
+const Slider = ({
+	children,
+	content,
+	current,
+	setCurrent,
+	columns,
+	showArrows,
+	autoUpdate
+}) => {
 	// total number of slides
 	const totalSlides = Math.ceil(content.length / columns)
 
@@ -31,25 +39,47 @@ const Slider = ({ children, content, current, setCurrent, columns }) => {
 		setCurrent(getPrevSlide())
 	}
 
+	// Auto scroll
+	autoUpdate &&
+		useEffect(() => {
+			const updateContent = setInterval(() => setCurrent(getNextSlide()), 6000)
+
+			// Clear the interval when the component unmounts
+			return () => clearInterval(updateContent)
+		}, [current, setCurrent])
+
 	return (
 		<div className={styles.slider}>
-			<div onClick={prevSlide}>
-				<ImageContainer
-					src='/arrow-left.svg'
-					className={styles.sliderArrow}
-					alt='Slider button to the left side'
-				/>
+			{showArrows && (
+				<div onClick={prevSlide}>
+					<ImageContainer
+						src='/arrow-left.svg'
+						className={styles.sliderArrow}
+						alt='Slider button to the left side'
+					/>
+				</div>
+			)}
+
+			<div
+				className={styles.sliderContent}
+				style={
+					showArrows
+						? { width: 'width: calc(100% - 4rem);' }
+						: { width: '100%' }
+				}
+			>
+				{children}
 			</div>
 
-			<div className={styles.sliderContent}>{children}</div>
-
-			<div onClick={nextSlide}>
-				<ImageContainer
-					src='/arrow-right.svg'
-					className={styles.sliderArrow}
-					alt='Slider button to the right side'
-				/>
-			</div>
+			{showArrows && (
+				<div onClick={nextSlide}>
+					<ImageContainer
+						src='/arrow-right.svg'
+						className={styles.sliderArrow}
+						alt='Slider button to the right side'
+					/>
+				</div>
+			)}
 		</div>
 	)
 }

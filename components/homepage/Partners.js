@@ -28,6 +28,7 @@ const Partners = ({ partners }) => {
 					setCurrent={setCurrent}
 					columns={columns}
 					content={partners}
+					autoUpdate
 				>
 					{partners.slice(first, last).map(item => (
 						<div key={item.sys.id} className={styles.partnersImageContainer}>
