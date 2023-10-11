@@ -7,6 +7,7 @@
 }
 
 .highlight {
+	margin-top: 6rem;
 	grid-column: span 3;
 	display: flex;
 	flex-direction: column;
@@ -21,6 +22,16 @@
 
 .highlight:nth-of-type(4) {
 	border-right: none;
+}
+
+// card
+.investmentCard {
+	grid-column: span 4;
+}
+
+.investmentPhoto {
+	width: 100%;
+	aspect-ratio: 16 / 10;
 }
 
 @media screen and (max-width: 1024px) {
@@ -38,5 +49,9 @@
 		h2 {
 			font-size: 2rem;
 		}
+	}
+
+	.investmentCard {
+		grid-column: span 12;
 	}
 }

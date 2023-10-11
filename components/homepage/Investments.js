@@ -5,14 +5,12 @@ import styles from './Investments.module.scss'
 
 // components
 import Slider from '../global/Slider'
+import InvestmentCard from './InvestmentCard'
 
 // hooks
 import { useState } from 'react'
 
-// temp list
-const investments = [1, 2, 3]
-
-const Investments = ({ highlights }) => {
+const Investments = ({ highlights, investments }) => {
 	const [current, setCurrent] = useState(0)
 	const columns = 3
 	const first = current * columns
@@ -30,7 +28,16 @@ const Investments = ({ highlights }) => {
 					columns={columns}
 					content={investments}
 					showArrows
-				></Slider>
+				>
+					{investments.slice(first, last).map(item => (
+						<InvestmentCard
+							key={item.sys.id}
+							photo={'https:' + item.fields.photo.fields.file.url}
+							title={item.fields.title}
+							subtitle={item.fields.subtitle}
+						/>
+					))}
+				</Slider>
 
 				{/* Highlights */}
 				<div className={`sectionContainer ${styles.highlights}`}>

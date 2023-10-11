@@ -62,11 +62,7 @@ const Slider = ({
 
 			<div
 				className={styles.sliderContent}
-				style={
-					showArrows
-						? { width: 'width: calc(100% - 4rem);' }
-						: { width: '100%' }
-				}
+				style={showArrows ? { width: 'calc(100% - 4rem);' } : { width: '100%' }}
 			>
 				{children}
 			</div>

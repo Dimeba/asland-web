@@ -18,6 +18,10 @@ export default async function Home() {
 		content_type: 'homepage'
 	})
 
+	const investments = await client.getEntries({
+		content_type: 'investments'
+	})
+
 	const pageContent = home.items[0]
 
 	return (
@@ -34,7 +38,10 @@ export default async function Home() {
 			/>
 			<Partners partners={pageContent.fields.partners} />
 			<People people={pageContent.fields.people} />
-			<Investments highlights={pageContent.fields.highlights} />
+			<Investments
+				investments={investments.items}
+				highlights={pageContent.fields.highlights}
+			/>
 		</main>
 	)
 }
