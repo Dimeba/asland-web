@@ -24,14 +24,39 @@
 	border-right: none;
 }
 
+// filter
+.filter {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+
+	p {
+		font-size: 1.5rem;
+
+		span {
+			cursor: pointer;
+		}
+	}
+}
+
+.active {
+	font-weight: 600;
+	color: base.$brand;
+}
+
 // card
 .investmentCard {
 	grid-column: span 4;
+
+	h5 {
+		margin-bottom: 0.4rem;
+	}
 }
 
 .investmentPhoto {
 	width: 100%;
 	aspect-ratio: 16 / 10;
+	margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 1024px) {

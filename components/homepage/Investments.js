@@ -11,8 +11,12 @@ import InvestmentCard from './InvestmentCard'
 import { useState } from 'react'
 
 const Investments = ({ highlights, investments }) => {
+	// filter
+	const [filter, setFilter] = useState('Preservation')
+
+	// slider
 	const [current, setCurrent] = useState(0)
-	const columns = 3
+	const [columns, setColumns] = useState(3)
 	const first = current * columns
 	const last = first + columns
 
@@ -21,22 +25,46 @@ const Investments = ({ highlights, investments }) => {
 			<div className='sectionContainer'>
 				<h2>Investments</h2>
 
+				{/* Filter */}
+				<div className={styles.filter}>
+					<p>
+						<span
+							className={filter == 'Preservation' && styles.active}
+							onClick={() => setFilter('Preservation')}
+						>
+							Preservation
+						</span>{' '}
+						|{' '}
+						<span
+							className={filter != 'Preservation' && styles.active}
+							onClick={() => setFilter('New Construction')}
+						>
+							New Construction
+						</span>
+					</p>
+				</div>
+
 				{/* Investments */}
 				<Slider
 					current={current}
 					setCurrent={setCurrent}
 					columns={columns}
+					setColumns={setColumns}
+					mobileColumns={1}
 					content={investments}
 					showArrows
 				>
-					{investments.slice(first, last).map(item => (
-						<InvestmentCard
-							key={item.sys.id}
-							photo={'https:' + item.fields.photo.fields.file.url}
-							title={item.fields.title}
-							subtitle={item.fields.subtitle}
-						/>
-					))}
+					{investments
+						.filter(item => item.fields.type == filter)
+						.slice(first, last)
+						.map(item => (
+							<InvestmentCard
+								key={item.sys.id}
+								photo={'https:' + item.fields.photo.fields.file.url}
+								title={item.fields.title}
+								subtitle={item.fields.subtitle}
+							/>
+						))}
 				</Slider>
 
 				{/* Highlights */}

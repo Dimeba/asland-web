@@ -15,9 +15,30 @@ const Slider = ({
 	current,
 	setCurrent,
 	columns,
+	setColumns,
+	mobileColumns,
 	showArrows,
 	autoUpdate
 }) => {
+	// Updating Number of columns based on screend width
+	setColumns &&
+		mobileColumns &&
+		useEffect(() => {
+			const updateColumns = () => {
+				if (window.innerWidth < 768) {
+					setColumns(mobileColumns)
+				} else {
+					setColumns(columns)
+				}
+			}
+			window.addEventListener('resize', updateColumns)
+			updateColumns()
+
+			return () => {
+				window.removeEventListener('resize', updateColumns)
+			}
+		}, [])
+
 	// total number of slides
 	const totalSlides = Math.ceil(content.length / columns)
 
@@ -62,7 +83,7 @@ const Slider = ({
 
 			<div
 				className={styles.sliderContent}
-				style={showArrows ? { width: 'calc(100% - 4rem);' } : { width: '100%' }}
+				style={showArrows ? { width: 'calc(100% - 4rem)' } : { width: '100%' }}
 			>
 				{children}
 			</div>
