@@ -57,13 +57,13 @@ const People = ({ people }) => {
 					{activeMember.fields.linkedin && (
 						<Link
 							href={activeMember.fields.linkedin}
-							style={{ display: 'block' }}
+							style={{ display: 'block', marginTop: '2rem' }}
 						>
-							<div className={styles.linkedin}>
+							<div className='link'>
 								<p>LinkedIn</p>
 								<ImageContainer
 									src='/link-arrow.svg'
-									className={styles.linkArrow}
+									className='linkArrow'
 									contain
 									alt='Link to LinkedIn'
 								/>

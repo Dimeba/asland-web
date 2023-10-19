@@ -90,23 +90,6 @@
 	opacity: 1;
 }
 
-.linkedin {
-	margin-top: 2rem;
-	display: flex;
-	gap: 0.4rem;
-	align-items: center;
-
-	p {
-		color: base.$brand;
-		font-weight: 600;
-	}
-
-	.linkArrow {
-		height: 1rem;
-		aspect-ratio: 1 / 2;
-	}
-}
-
 @media screen and (max-width: 1440px) {
 	.teamCard {
 		grid-column: span 4;

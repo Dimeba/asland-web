@@ -7,6 +7,8 @@ import About from '@/components/homepage/About'
 import Partners from '@/components/homepage/Partners'
 import People from '@/components/homepage/People'
 import Investments from '@/components/homepage/Investments'
+import Venture from '@/components/homepage/Venture'
+import News from '@/components/homepage/News'
 
 export default async function Home() {
 	const client = createClient({
@@ -20,6 +22,10 @@ export default async function Home() {
 
 	const investments = await client.getEntries({
 		content_type: 'investments'
+	})
+
+	const news = await client.getEntries({
+		content_type: 'newsSection'
 	})
 
 	const pageContent = home.items[0]
@@ -42,6 +48,8 @@ export default async function Home() {
 				investments={investments.items}
 				highlights={pageContent.fields.highlights}
 			/>
+			<Venture ventureText={pageContent.fields.ventureText} />
+			<News news={news.items[0]} />
 		</main>
 	)
 }

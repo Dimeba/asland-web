@@ -27,21 +27,21 @@ const Investments = ({ highlights, investments }) => {
 
 				{/* Filter */}
 				<div className={styles.filter}>
-					<p>
+					<h4>
 						<span
-							className={filter == 'Preservation' && styles.active}
+							className={filter == 'Preservation' ? styles.active : ''}
 							onClick={() => setFilter('Preservation')}
 						>
 							Preservation
 						</span>{' '}
 						|{' '}
 						<span
-							className={filter != 'Preservation' && styles.active}
+							className={filter != 'Preservation' ? styles.active : ''}
 							onClick={() => setFilter('New Construction')}
 						>
 							New Construction
 						</span>
-					</p>
+					</h4>
 				</div>
 
 				{/* Investments */}

@@ -1,0 +1,25 @@
+@use '@/app/base';
+
+// card
+.newsCard {
+	grid-column: span 4;
+
+	h5 {
+		margin-bottom: 0.4rem;
+	}
+}
+
+.newsPhoto {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.newsCard {
+		grid-column: span 12;
+	}
+}

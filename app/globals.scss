@@ -84,6 +84,23 @@ a {
 	gap: 1rem;
 }
 
+// Basic Link
+.link {
+	display: flex;
+	gap: 0.4rem;
+	align-items: center;
+
+	p {
+		color: base.$brand !important;
+		font-weight: 600;
+	}
+}
+
+.linkArrow {
+	height: 1rem;
+	aspect-ratio: 1 / 2;
+}
+
 // Sections
 
 section {
