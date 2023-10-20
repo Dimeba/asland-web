@@ -45,7 +45,7 @@ export default async function Service({ params }) {
 			<InvestmentInfo investment={investment} />
 
 			<Investments
-				investments={investments.items}
+				investments={investments.items.filter(item => item.sys.id != slug)}
 				highlights={home.items[0].fields.highlights}
 			/>
 		</main>
