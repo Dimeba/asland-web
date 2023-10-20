@@ -47,7 +47,7 @@ const Header = () => {
 			<div className={`sectionContainer ${styles.headerContainer}`}>
 				<Link href='/'>
 					<ImageContainer
-						src='./logo.svg'
+						src='/logo.svg'
 						className={styles.logoContainer}
 						contain
 						priority

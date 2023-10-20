@@ -10,7 +10,7 @@ import InvestmentCard from './InvestmentCard'
 // hooks
 import { useState } from 'react'
 
-const Investments = ({ highlights, investments }) => {
+const Investments = ({ highlights, investments, title }) => {
 	// filter
 	const [filter, setFilter] = useState('Preservation')
 
@@ -23,7 +23,7 @@ const Investments = ({ highlights, investments }) => {
 	return (
 		<section id='investments' className='sectionDark'>
 			<div className='sectionContainer'>
-				<h2>Investments</h2>
+				{title && <h2>Investments</h2>}
 
 				{/* Filter */}
 				<div className={styles.filter}>
@@ -63,6 +63,7 @@ const Investments = ({ highlights, investments }) => {
 								photo={'https:' + item.fields.photo.fields.file.url}
 								title={item.fields.title}
 								subtitle={item.fields.subtitle}
+								id={item.sys.id}
 							/>
 						))}
 				</Slider>

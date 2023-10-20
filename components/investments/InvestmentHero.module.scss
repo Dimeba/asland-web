@@ -1,0 +1,39 @@
+@use '@/app/base';
+
+.hero {
+	position: relative;
+}
+
+.heroImage {
+	width: 100%;
+	height: 100vh;
+}
+
+.heroText {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding-bottom: 2rem;
+	padding-top: 30%;
+
+	* {
+		color: white;
+	}
+
+	h2 {
+		margin-bottom: 1rem;
+	}
+
+	background-image: linear-gradient(transparent, rgba(black, 0.9));
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.heroText {
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}

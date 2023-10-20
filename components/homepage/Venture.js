@@ -5,7 +5,7 @@ import styles from './Venture.module.scss'
 import ImageContainer from '../global/ImageContainer'
 import Link from 'next/link'
 
-const Venture = ({ ventureText }) => {
+const Venture = ({ ventureText, ventureLogos }) => {
 	return (
 		<section id='venture'>
 			<div className='sectionContainer'>
@@ -30,31 +30,39 @@ const Venture = ({ ventureText }) => {
 				{/* Direct Investments Logos */}
 				<h4>Direct Investments</h4>
 				<div className='grid' style={{ marginBottom: '4rem' }}>
-					<div className={styles.ventureImageContainer}>
-						<Link href='' target='_blank'>
-							<ImageContainer
-								src='/logo.svg'
-								className={styles.ventureImage}
-								contain
-								alt={''}
-							/>
-						</Link>
-					</div>
+					{ventureLogos
+						.filter(item => item.fields.type == 'Direct Investments')
+						.map(item => (
+							<div key={item.sys.id} className={styles.ventureImageContainer}>
+								<Link href='' target='_blank'>
+									<ImageContainer
+										src={'https:' + item.fields.photo.fields.file.url}
+										className={styles.ventureImage}
+										contain
+										alt={''}
+									/>
+								</Link>
+							</div>
+						))}
 				</div>
 
 				{/* Fund Investments Logos */}
 				<h4>Fund Investments</h4>
 				<div className='grid'>
-					<div className={styles.ventureImageContainer}>
-						<Link href='' target='_blank'>
-							<ImageContainer
-								src='/logo.svg'
-								className={styles.ventureImage}
-								contain
-								alt={''}
-							/>
-						</Link>
-					</div>
+					{ventureLogos
+						.filter(item => item.fields.type == 'Fund Investments')
+						.map(item => (
+							<div key={item.sys.id} className={styles.ventureImageContainer}>
+								<Link href='' target='_blank'>
+									<ImageContainer
+										src={'https:' + item.fields.photo.fields.file.url}
+										className={styles.ventureImage}
+										contain
+										alt={''}
+									/>
+								</Link>
+							</div>
+						))}
 				</div>
 			</div>
 		</section>
