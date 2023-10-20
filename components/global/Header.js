@@ -76,6 +76,7 @@ const Header = () => {
 							onMouseLeave={() => setHoveredItem(null)}
 							key={index}
 							href={item.url}
+							onClick={() => setOpenMenu(false)}
 						>
 							<p
 								className={
