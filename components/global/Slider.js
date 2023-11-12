@@ -7,7 +7,7 @@ import styles from './Slider.module.scss'
 import ImageContainer from './ImageContainer'
 
 // hooks
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 const Slider = ({
 	children,

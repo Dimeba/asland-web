@@ -51,7 +51,7 @@ const Investments = ({ highlights, investments, title }) => {
 					columns={columns}
 					setColumns={setColumns}
 					mobileColumns={1}
-					content={investments}
+					content={investments.filter(item => item.fields.type == filter)}
 					showArrows
 				>
 					{investments

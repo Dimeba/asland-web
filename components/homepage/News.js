@@ -17,6 +17,8 @@ const News = ({ news }) => {
 	const first = current * columns
 	const last = first + columns
 
+	console.log(news)
+
 	return (
 		<section id='news' className='sectionDark'>
 			<div className='sectionContainer'>
