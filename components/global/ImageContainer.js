@@ -8,7 +8,7 @@ const ImageContainer = ({ src, className, contain, priority, alt }) => {
 				src={src}
 				fill
 				quality={100}
-				sizes='(max-width: 768px) 100vw, 768px'
+				sizes='(max-width: 768px) 50vw'
 				style={{ objectFit: contain ? 'contain' : 'cover' }}
 				priority={priority ? true : false}
 				alt={alt ? alt : 'Image'}
