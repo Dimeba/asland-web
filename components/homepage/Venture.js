@@ -5,7 +5,7 @@ import styles from './Venture.module.scss'
 import ImageContainer from '../global/ImageContainer'
 import Link from 'next/link'
 
-const Venture = ({ ventureText, ventureLogos }) => {
+const Venture = ({ ventureText, ventures }) => {
 	return (
 		<section id='venture'>
 			<div className='sectionContainer'>
@@ -30,47 +30,43 @@ const Venture = ({ ventureText, ventureLogos }) => {
 				{/* Direct Investments Logos */}
 				<h4>Direct Investments</h4>
 				<div className='grid' style={{ marginBottom: '4rem' }}>
-					{ventureLogos
-						.filter(item => item.fields.type == 'Direct Investments')
-						.map(item => (
-							<div key={item.sys.id} className={styles.ventureImageContainer}>
-								<Link
-									href={item.fields.link}
-									target='_blank'
-									aria-label={`Link to ${item.fields.name}'s website`}
-								>
-									<ImageContainer
-										src={'https:' + item.fields.photo.fields.file.url}
-										className={styles.ventureImage}
-										contain
-										alt={`${item.fields.name} logo`}
-									/>
-								</Link>
-							</div>
-						))}
+					{ventures.fields.directInvestments.map(item => (
+						<div key={item.sys.id} className={styles.ventureImageContainer}>
+							<Link
+								href={item.fields.link}
+								target='_blank'
+								aria-label={`Link to ${item.fields.name}'s website`}
+							>
+								<ImageContainer
+									src={'https:' + item.fields.photo.fields.file.url}
+									className={styles.ventureImage}
+									contain
+									alt={`${item.fields.name} logo`}
+								/>
+							</Link>
+						</div>
+					))}
 				</div>
 
 				{/* Fund Investments Logos */}
 				<h4>Fund Investments</h4>
 				<div className='grid'>
-					{ventureLogos
-						.filter(item => item.fields.type == 'Fund Investments')
-						.map(item => (
-							<div key={item.sys.id} className={styles.ventureImageContainer}>
-								<Link
-									href={item.fields.link}
-									target='_blank'
-									aria-label={`Link to ${item.fields.name}'s website`}
-								>
-									<ImageContainer
-										src={'https:' + item.fields.photo.fields.file.url}
-										className={styles.ventureImage}
-										contain
-										alt={''}
-									/>
-								</Link>
-							</div>
-						))}
+					{ventures.fields.fundInvestments.map(item => (
+						<div key={item.sys.id} className={styles.ventureImageContainer}>
+							<Link
+								href={item.fields.link}
+								target='_blank'
+								aria-label={`Link to ${item.fields.name}'s website`}
+							>
+								<ImageContainer
+									src={'https:' + item.fields.photo.fields.file.url}
+									className={styles.ventureImage}
+									contain
+									alt={''}
+								/>
+							</Link>
+						</div>
+					))}
 				</div>
 			</div>
 		</section>

@@ -37,8 +37,8 @@ export default async function Home() {
 		content_type: 'newsSection'
 	})
 
-	const ventureLogos = await client.getEntries({
-		content_type: 'ventureLogos'
+	const ventures = await client.getEntries({
+		content_type: 'venturesSection'
 	})
 
 	const pageContent = home.items[0]
@@ -64,7 +64,7 @@ export default async function Home() {
 			/>
 			<Venture
 				ventureText={pageContent.fields.ventureText}
-				ventureLogos={ventureLogos.items}
+				ventures={ventures.items[0]}
 			/>
 			<News news={news.items[0]} />
 			<Contact />
