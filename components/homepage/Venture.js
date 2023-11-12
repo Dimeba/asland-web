@@ -18,7 +18,7 @@ const Venture = ({ ventureText, ventureLogos }) => {
 						priority
 						alt='Logo'
 					/>
-					<p className='largeP'>Ventures+</p>
+					<p className='largeP'>Ventures</p>
 				</div>
 
 				{/* Text */}
@@ -34,12 +34,12 @@ const Venture = ({ ventureText, ventureLogos }) => {
 						.filter(item => item.fields.type == 'Direct Investments')
 						.map(item => (
 							<div key={item.sys.id} className={styles.ventureImageContainer}>
-								<Link href='' target='_blank'>
+								<Link href={item.fields.link} target='_blank'>
 									<ImageContainer
 										src={'https:' + item.fields.photo.fields.file.url}
 										className={styles.ventureImage}
 										contain
-										alt={''}
+										alt={`${item.fields.name} logo`}
 									/>
 								</Link>
 							</div>
@@ -53,7 +53,7 @@ const Venture = ({ ventureText, ventureLogos }) => {
 						.filter(item => item.fields.type == 'Fund Investments')
 						.map(item => (
 							<div key={item.sys.id} className={styles.ventureImageContainer}>
-								<Link href='' target='_blank'>
+								<Link href={item.fields.link} target='_blank'>
 									<ImageContainer
 										src={'https:' + item.fields.photo.fields.file.url}
 										className={styles.ventureImage}

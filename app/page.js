@@ -25,6 +25,14 @@ export default async function Home() {
 		content_type: 'investments'
 	})
 
+	const people = await client.getEntries({
+		content_type: 'peopleSection'
+	})
+
+	const partners = await client.getEntries({
+		content_type: 'partnersSection'
+	})
+
 	const news = await client.getEntries({
 		content_type: 'newsSection'
 	})
@@ -47,8 +55,8 @@ export default async function Home() {
 				missionText={pageContent.fields.missionText}
 				aboutText={pageContent.fields.aboutText}
 			/>
-			<Partners partners={pageContent.fields.partners} />
-			<People people={pageContent.fields.people} />
+			<Partners partners={partners.items[0].fields.partners} />
+			<People people={people.items[0].fields.people} />
 			<Investments
 				investments={investments.items}
 				highlights={pageContent.fields.highlights}

@@ -26,7 +26,7 @@ const Header = () => {
 			url: '/#investments'
 		},
 		{
-			text: 'Venture+',
+			text: 'Venture',
 			url: '/#venture'
 		},
 		{

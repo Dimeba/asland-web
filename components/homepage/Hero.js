@@ -1,19 +1,30 @@
-// 'use client'
+'use client'
 
 // contentful
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 // components
 import ImageContainer from '../global/ImageContainer'
-import Link from 'next/link'
+
+// hooks
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 // styles
 import styles from './Hero.module.scss'
 
 const Hero = ({ video, videoPlaceholder, heroText }) => {
+	const options = {
+		root: null,
+		rootMargin: '0%',
+		threshold: 0
+	}
+
+	const [targetRef, isIntersecting] = useIntersectionObserver(options)
+
 	return (
 		<section className={styles.hero}>
 			<video
+				ref={targetRef}
 				autoPlay
 				loop
 				poster={'https:' + videoPlaceholder}
@@ -21,11 +32,13 @@ const Hero = ({ video, videoPlaceholder, heroText }) => {
 				playsInline
 				preload='auto'
 			>
-				<source src={'https:' + video} type='video/mp4' />
+				{isIntersecting && <source src={'https:' + video} type='video/mp4' />}
 			</video>
 
 			<div className={styles.heroText}>
-				{documentToReactComponents(heroText)}
+				<div className='sectionContainer' style={{ overflow: 'hidden' }}>
+					{documentToReactComponents(heroText)}
+				</div>
 			</div>
 
 			<a href='/#about'>

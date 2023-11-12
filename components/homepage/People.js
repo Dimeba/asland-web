@@ -44,14 +44,19 @@ const People = ({ people }) => {
 						{documentToReactComponents(activeMember.fields.bio)}
 					</div>
 					<div className='grid'>
-						<div className={styles.bioColumn}>
-							<h4>Prior Experience</h4>
-							{documentToReactComponents(activeMember.fields.experience)}
-						</div>
-						<div className={styles.bioColumn}>
-							<h4>Education</h4>
-							{documentToReactComponents(activeMember.fields.education)}
-						</div>
+						{activeMember.fields.experience && (
+							<div className={styles.bioColumn}>
+								<h4>Prior Experience</h4>
+								{documentToReactComponents(activeMember.fields.experience)}
+							</div>
+						)}
+
+						{activeMember.fields.education && (
+							<div className={styles.bioColumn}>
+								<h4>Education</h4>
+								{documentToReactComponents(activeMember.fields.education)}
+							</div>
+						)}
 					</div>
 
 					{activeMember.fields.linkedin && (
