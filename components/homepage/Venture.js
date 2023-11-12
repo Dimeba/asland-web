@@ -34,7 +34,11 @@ const Venture = ({ ventureText, ventureLogos }) => {
 						.filter(item => item.fields.type == 'Direct Investments')
 						.map(item => (
 							<div key={item.sys.id} className={styles.ventureImageContainer}>
-								<Link href={item.fields.link} target='_blank'>
+								<Link
+									href={item.fields.link}
+									target='_blank'
+									aria-label={`Link to ${item.fields.name}'s website`}
+								>
 									<ImageContainer
 										src={'https:' + item.fields.photo.fields.file.url}
 										className={styles.ventureImage}
@@ -53,7 +57,11 @@ const Venture = ({ ventureText, ventureLogos }) => {
 						.filter(item => item.fields.type == 'Fund Investments')
 						.map(item => (
 							<div key={item.sys.id} className={styles.ventureImageContainer}>
-								<Link href={item.fields.link} target='_blank'>
+								<Link
+									href={item.fields.link}
+									target='_blank'
+									aria-label={`Link to ${item.fields.name}'s website`}
+								>
 									<ImageContainer
 										src={'https:' + item.fields.photo.fields.file.url}
 										className={styles.ventureImage}

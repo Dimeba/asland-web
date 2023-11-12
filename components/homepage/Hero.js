@@ -41,7 +41,7 @@ const Hero = ({ video, videoPlaceholder, heroText }) => {
 				</div>
 			</div>
 
-			<a href='/#about'>
+			<a href='/#about' aria-label='About Us'>
 				<ImageContainer
 					src='./arrow-down.svg'
 					className={styles.arrow}

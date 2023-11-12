@@ -63,6 +63,7 @@ const People = ({ people }) => {
 						<Link
 							href={activeMember.fields.linkedin}
 							style={{ display: 'block', marginTop: '2rem' }}
+							aria-label={`Link to ${activeMember.fields.name}'s LinkedIn profile`}
 						>
 							<div className='link'>
 								<p>LinkedIn</p>

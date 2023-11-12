@@ -15,7 +15,7 @@ const NewsCard = ({ photo, title, publisher, date, text, link }) => {
 					{publisher} | {date}
 				</p>
 				<p style={{ marginBottom: '1rem' }}>{text}</p>
-				<Link href={link} target='_blank'>
+				<Link href={link} target='_blank' aria-label='Link to the article'>
 					<div className='link'>
 						<p>Read More</p>
 						<ImageContainer

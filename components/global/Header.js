@@ -45,7 +45,7 @@ const Header = () => {
 	return (
 		<header className={styles.header}>
 			<div className={`sectionContainer ${styles.headerContainer}`}>
-				<Link href='/'>
+				<Link href='/' aria-label='Homepage'>
 					<ImageContainer
 						src='/logo.svg'
 						className={styles.logoContainer}
@@ -77,6 +77,7 @@ const Header = () => {
 							key={index}
 							href={item.url}
 							onClick={() => setOpenMenu(false)}
+							aria-label={item.text}
 						>
 							<p
 								className={
@@ -96,7 +97,10 @@ const Header = () => {
 						!openMenu && styles.hidden
 					}`}
 				>
-					<Link href='https://aslandcap.junipersquare.com/login'>
+					<Link
+						href='https://aslandcap.junipersquare.com/login'
+						aria-label='Investor Login'
+					>
 						<button className={styles.loginButton}>Investor Login</button>
 					</Link>
 				</div>

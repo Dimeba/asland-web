@@ -12,11 +12,21 @@ const Footer = () => {
 			<div className={`sectionContainer ${styles.footerContainer}`}>
 				<p>Copyright © {year} Asland. All Rights reserved</p>
 				<p>
-					<Link href='https://aslandcap.junipersquare.com/login'>
+					<Link
+						href='https://aslandcap.junipersquare.com/login'
+						aria-label='Investor Login'
+					>
 						Investor Login
 					</Link>{' '}
-					| <Link href='/terms'>Terms & Conditions</Link> |{' '}
-					<Link href='https://www.linkedin.com/company/aslandcapitalpartners/'>
+					|{' '}
+					<Link href='/terms' aria-label='Terms & Conditions'>
+						Terms & Conditions
+					</Link>{' '}
+					|{' '}
+					<Link
+						href='https://www.linkedin.com/company/aslandcapitalpartners/'
+						aria-label='Company LinkedIn'
+					>
 						LinkedIn
 					</Link>
 				</p>

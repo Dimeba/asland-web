@@ -32,7 +32,11 @@ const Partners = ({ partners }) => {
 				>
 					{partners.slice(first, last).map(item => (
 						<div key={item.sys.id} className={styles.partnersImageContainer}>
-							<Link href={item.fields.link} target='_blank'>
+							<Link
+								href={item.fields.link}
+								target='_blank'
+								aria-label={`Link to ${item.fields.name} website`}
+							>
 								<ImageContainer
 									src={'https:' + item.fields.logo.fields.file.url}
 									className={styles.partnerImage}
