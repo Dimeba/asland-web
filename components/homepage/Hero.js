@@ -12,7 +12,7 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 // styles
 import styles from './Hero.module.scss'
 
-const Hero = ({ video, videoPlaceholder, heroText }) => {
+const Hero = ({ hero }) => {
 	const options = {
 		root: null,
 		rootMargin: '0%',
@@ -27,17 +27,22 @@ const Hero = ({ video, videoPlaceholder, heroText }) => {
 				ref={targetRef}
 				autoPlay
 				loop
-				poster={'https:' + videoPlaceholder}
+				poster={'https:' + hero.fields.videoPlaceholder.fields.file.url}
 				muted
 				playsInline
 				preload='auto'
 			>
-				{isIntersecting && <source src={'https:' + video} type='video/mp4' />}
+				{isIntersecting && (
+					<source
+						src={'https:' + hero.fields.video.fields.file.url}
+						type='video/mp4'
+					/>
+				)}
 			</video>
 
 			<div className={styles.heroText}>
 				<div className='sectionContainer' style={{ overflow: 'hidden' }}>
-					{documentToReactComponents(heroText)}
+					{documentToReactComponents(hero.fields.heroText)}
 				</div>
 			</div>
 

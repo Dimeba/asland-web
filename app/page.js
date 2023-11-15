@@ -17,55 +17,42 @@ export default async function Home() {
 		accessToken: process.env.accessToken
 	})
 
-	const home = await client.getEntries({
-		content_type: 'homepage'
+	const hero = await client.getEntries({
+		content_type: 'heroSection'
 	})
 
-	const investments = await client.getEntries({
-		content_type: 'investments'
-	})
-
-	const people = await client.getEntries({
-		content_type: 'peopleSection'
+	const about = await client.getEntries({
+		content_type: 'aboutSection'
 	})
 
 	const partners = await client.getEntries({
 		content_type: 'partnersSection'
 	})
 
-	const news = await client.getEntries({
-		content_type: 'newsSection'
+	const people = await client.getEntries({
+		content_type: 'peopleSection'
+	})
+
+	const investments = await client.getEntries({
+		content_type: 'investmentsSection'
 	})
 
 	const ventures = await client.getEntries({
 		content_type: 'venturesSection'
 	})
 
-	const pageContent = home.items[0]
+	const news = await client.getEntries({
+		content_type: 'newsSection'
+	})
 
 	return (
 		<main>
-			<Hero
-				video={pageContent.fields.video.fields.file.url}
-				videoPlaceholder={pageContent.fields.videoPlaceholder.fields.file.url}
-				heroText={pageContent.fields.heroText}
-			/>
-			<About
-				aboutImage={pageContent.fields.aboutImage.fields.file.url}
-				missionText={pageContent.fields.missionText}
-				aboutText={pageContent.fields.aboutText}
-			/>
+			<Hero hero={hero.items[0]} />
+			<About about={about.items[0]} />
 			<Partners partners={partners.items[0].fields.partners} />
 			<People people={people.items[0].fields.people} />
-			<Investments
-				investments={investments.items}
-				highlights={pageContent.fields.highlights}
-				title
-			/>
-			<Venture
-				ventureText={pageContent.fields.ventureText}
-				ventures={ventures.items[0]}
-			/>
+			<Investments investments={investments.items[0]} title />
+			<Venture ventures={ventures.items[0]} />
 			<News news={news.items[0]} />
 			<Contact />
 		</main>

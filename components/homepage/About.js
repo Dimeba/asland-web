@@ -4,16 +4,19 @@ import styles from './About.module.scss'
 // components
 import ImageContainer from '../global/ImageContainer'
 
-const About = ({ aboutImage, missionText, aboutText }) => {
+const About = ({ about }) => {
 	return (
 		<section id='about' className={styles.about}>
-			<ImageContainer src={'https:' + aboutImage} className={styles.image} />
+			<ImageContainer
+				src={'https:' + about.fields.aboutImage.fields.file.url}
+				className={styles.image}
+			/>
 
 			<div className={styles.text}>
 				<h2>Our Mission</h2>
-				<p className='largeP'>{missionText}</p>
+				<p className='largeP'>{about.fields.missionText}</p>
 				<hr />
-				<p>{aboutText}</p>
+				<p>{about.fields.aboutText}</p>
 			</div>
 		</section>
 	)

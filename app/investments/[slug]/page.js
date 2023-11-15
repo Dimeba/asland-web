@@ -36,6 +36,10 @@ export default async function Service({ params }) {
 		content_type: 'investments'
 	})
 
+	const investmentsSection = await client.getEntries({
+		content_type: 'investmentsSection'
+	})
+
 	const investment = investments.items.find(item => item.sys.id == slug)
 
 	return (
@@ -45,7 +49,7 @@ export default async function Service({ params }) {
 			<InvestmentInfo investment={investment} />
 
 			<Investments
-				investments={investments.items.filter(item => item.sys.id != slug)}
+				investments={investmentsSection.items[0]}
 				highlights={home.items[0].fields.highlights}
 			/>
 		</main>

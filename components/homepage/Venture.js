@@ -5,7 +5,7 @@ import styles from './Venture.module.scss'
 import ImageContainer from '../global/ImageContainer'
 import Link from 'next/link'
 
-const Venture = ({ ventureText, ventures }) => {
+const Venture = ({ ventures }) => {
 	return (
 		<section id='venture'>
 			<div className='sectionContainer'>
@@ -24,7 +24,7 @@ const Venture = ({ ventureText, ventures }) => {
 				{/* Text */}
 				<div className={styles.text}>
 					<h3>Investment Approach</h3>
-					<p className='largeP'>{ventureText}</p>
+					<p className='largeP'>{ventures.fields.ventureText}</p>
 				</div>
 
 				{/* Direct Investments Logos */}

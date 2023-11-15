@@ -10,7 +10,7 @@ import InvestmentCard from './InvestmentCard'
 // hooks
 import { useState } from 'react'
 
-const Investments = ({ highlights, investments, title }) => {
+const Investments = ({ investments, title }) => {
 	// filter
 	const [filter, setFilter] = useState('Preservation')
 
@@ -51,26 +51,41 @@ const Investments = ({ highlights, investments, title }) => {
 					columns={columns}
 					setColumns={setColumns}
 					mobileColumns={1}
-					content={investments.filter(item => item.fields.type == filter)}
+					content={
+						filter == 'Preservation'
+							? investments.fields.preservation
+							: investments.fields.newConstruction
+					}
 					showArrows
 				>
-					{investments
-						.filter(item => item.fields.type == filter)
-						.slice(first, last)
-						.map(item => (
-							<InvestmentCard
-								key={item.sys.id}
-								photo={'https:' + item.fields.photo.fields.file.url}
-								title={item.fields.title}
-								subtitle={item.fields.subtitle}
-								id={item.sys.id}
-							/>
-						))}
+					{filter == 'Preservation'
+						? investments.fields.preservation
+								.slice(first, last)
+								.map(item => (
+									<InvestmentCard
+										key={item.sys.id}
+										photo={'https:' + item.fields.photo.fields.file.url}
+										title={item.fields.title}
+										subtitle={item.fields.subtitle}
+										id={item.sys.id}
+									/>
+								))
+						: investments.fields.newConstruction
+								.slice(first, last)
+								.map(item => (
+									<InvestmentCard
+										key={item.sys.id}
+										photo={'https:' + item.fields.photo.fields.file.url}
+										title={item.fields.title}
+										subtitle={item.fields.subtitle}
+										id={item.sys.id}
+									/>
+								))}
 				</Slider>
 
 				{/* Highlights */}
 				<div className={`sectionContainer ${styles.highlights}`}>
-					{highlights.map(highlight => (
+					{investments.fields.highlights.map(highlight => (
 						<div className={styles.highlight} key={highlight.sys.id}>
 							<h2>{highlight.fields.value}</h2>
 							<p className='smallP'>{highlight.fields.label}</p>

@@ -1,5 +1,6 @@
 @use '@/app/base';
 
+// Optimized 6 column slider
 .partnersImageContainer {
 	grid-column: span 2;
 	background-color: base.$dark1;
@@ -23,11 +24,77 @@
 	height: 40%;
 }
 
+// Full slider
+.fullSlider {
+	overflow: hidden;
+}
+
+.fullSliderImages {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: nowrap;
+	width: fit-content;
+	animation-name: slide;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.fullSliderImageConatiner {
+	width: 12vw;
+	background-color: base.$dark1;
+	aspect-ratio: 1 / 1;
+
+	a {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.fullSliderImage {
+	width: 100%;
+	background-color: base.$dark1;
+	aspect-ratio: 1 / 1;
+
+	a {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	width: 70%;
+	height: 40%;
+}
+
+// animation
+@keyframes slide {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(calc(-100% + 100vw));
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
 @media screen and (max-width: 1024px) {
+	.fullSliderImageConatiner {
+		width: 25vw;
+	}
 }
 
 @media screen and (max-width: 768px) {
 	.partnersImageContainer {
 		grid-column: span 6;
+	}
+
+	.fullSliderImageConatiner {
+		width: 90vw;
 	}
 }
