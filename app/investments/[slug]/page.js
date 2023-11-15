@@ -11,14 +11,6 @@ const client = createClient({
 	accessToken: process.env.accessToken
 })
 
-const home = await client.getEntries({
-	content_type: 'homepage'
-})
-
-const investments = await client.getEntries({
-	content_type: 'investments'
-})
-
 export async function generateStaticParams() {
 	const investments = await client.getEntries({
 		content_type: 'investments'
@@ -50,7 +42,7 @@ export default async function Service({ params }) {
 
 			<Investments
 				investments={investmentsSection.items[0]}
-				highlights={home.items[0].fields.highlights}
+				highlights={investmentsSection.items[0].fields.highlights}
 			/>
 		</main>
 	)
