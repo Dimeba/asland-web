@@ -59,22 +59,28 @@ const Partners = ({ partners }) => {
 						animationDuration: `${partners.length * 6}s`
 					}}
 				>
-					{partners.map(item => (
-						<div key={item.sys.id} className={styles.fullSliderImageConatiner}>
-							<Link
-								href={item.fields.link}
-								target='_blank'
-								aria-label={`Link to ${item.fields.name} website`}
-							>
-								<ImageContainer
-									src={'https:' + item.fields.logo.fields.file.url}
-									className={styles.fullSliderImage}
-									contain
-									alt={item.fields.name}
-								/>
-							</Link>
-						</div>
-					))}
+					{partners.map(
+						item =>
+							item.fields.logo.fields.file && (
+								<div
+									key={item.sys.id}
+									className={styles.fullSliderImageConatiner}
+								>
+									<Link
+										href={item.fields.link}
+										target='_blank'
+										aria-label={`Link to ${item.fields.name} website`}
+									>
+										<ImageContainer
+											src={'https:' + item.fields.logo.fields.file.url}
+											className={styles.fullSliderImage}
+											contain
+											alt={item.fields.name}
+										/>
+									</Link>
+								</div>
+							)
+					)}
 				</div>
 			</div>
 		</section>
