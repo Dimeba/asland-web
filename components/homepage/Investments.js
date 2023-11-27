@@ -27,7 +27,7 @@ const Investments = ({ investments, title }) => {
 
 				{/* Filter */}
 				<div className={styles.filter}>
-					<h4>
+					<h3>
 						<span
 							className={filter == 'Preservation' ? styles.active : ''}
 							onClick={() => setFilter('Preservation')}
@@ -41,7 +41,7 @@ const Investments = ({ investments, title }) => {
 						>
 							New Construction
 						</span>
-					</h4>
+					</h3>
 				</div>
 
 				{/* Investments */}

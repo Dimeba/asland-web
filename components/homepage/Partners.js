@@ -17,6 +17,14 @@ const Partners = ({ partners }) => {
 	// const first = current * columns
 	// const last = first + columns
 
+	const sliderContent = [
+		...partners,
+		...partners,
+		...partners,
+		...partners,
+		...partners
+	]
+
 	return (
 		<section className='sectionDark'>
 			<div className='sectionContainer'>
@@ -56,10 +64,10 @@ const Partners = ({ partners }) => {
 				<div
 					className={styles.fullSliderImages}
 					style={{
-						animationDuration: `${partners.length * 6}s`
+						animationDuration: `${partners.length * 30}s`
 					}}
 				>
-					{partners.map(
+					{sliderContent.map(
 						item =>
 							item.fields.logo.fields.file && (
 								<div

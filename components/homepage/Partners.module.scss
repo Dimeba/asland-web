@@ -53,9 +53,12 @@
 	}
 }
 
+.fullSliderImageConatiner:hover {
+	background-color: base.$dark3;
+}
+
 .fullSliderImage {
 	width: 100%;
-	background-color: base.$dark1;
 	aspect-ratio: 1 / 1;
 
 	a {
@@ -75,11 +78,8 @@
 	0% {
 		transform: translateX(0);
 	}
-	50% {
-		transform: translateX(calc(-100% + 100vw));
-	}
 	100% {
-		transform: translateX(0);
+		transform: translateX(calc(-100% + 100vw));
 	}
 }
 

@@ -59,18 +59,18 @@
 	width: 100%;
 }
 
-.teamCard:hover .overlay {
-	opacity: 0;
-}
+// .teamCard:hover .overlay {
+// 	opacity: 0;
+// }
 
 .active {
 	hr {
 		width: 100% !important;
 	}
 
-	.overlay {
-		opacity: 0 !important;
-	}
+	// .overlay {
+	// 	opacity: 0 !important;
+	// }
 }
 
 .teamPhoto {
@@ -79,16 +79,16 @@
 	margin-bottom: calc(1rem - 6px);
 }
 
-.overlay {
-	width: 100%;
-	aspect-ratio: 1 / 1;
-	background-color: base.$dark1;
-	position: absolute;
-	top: 0;
-	left: 0;
-	mix-blend-mode: color;
-	opacity: 1;
-}
+// .overlay {
+// 	width: 100%;
+// 	aspect-ratio: 1 / 1;
+// 	background-color: base.$dark1;
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	mix-blend-mode: color;
+// 	opacity: 1;
+// }
 
 @media screen and (max-width: 1440px) {
 	.teamCard {

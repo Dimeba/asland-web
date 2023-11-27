@@ -10,11 +10,13 @@ const NewsCard = ({ photo, title, publisher, date, text, link }) => {
 		<div className={styles.newsCard}>
 			<ImageContainer src={photo} className={styles.newsPhoto} />
 			<div className={styles.newsText}>
-				<h5>{title}</h5>
-				<p className='smallP' style={{ marginBottom: '1rem' }}>
+				<h4>{title}</h4>
+				<p className='largeP' style={{ marginBottom: '1rem' }}>
 					{publisher} | {date}
 				</p>
-				<p style={{ marginBottom: '1rem' }}>{text}</p>
+				<p className='smallP' style={{ marginBottom: '1rem' }}>
+					{text}
+				</p>
 				<Link href={link} target='_blank' aria-label='Link to the article'>
 					<div className='link'>
 						<p>Read More</p>
