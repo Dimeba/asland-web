@@ -68,10 +68,10 @@ const Partners = ({ partners }) => {
 					}}
 				>
 					{sliderContent.map(
-						item =>
+						(item, index) =>
 							item.fields.logo.fields.file && (
 								<div
-									key={item.sys.id}
+									key={item.sys.id + index}
 									className={styles.fullSliderImageConatiner}
 								>
 									<Link

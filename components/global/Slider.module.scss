@@ -40,6 +40,27 @@
 	}
 }
 
+// bullets
+.bullets {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.bullet {
+	border-radius: 50%;
+	border: 1px solid white;
+	width: 1rem;
+	aspect-ratio: 1 /1;
+	cursor: pointer;
+	background-color: transparent;
+}
+
+.bullet.active {
+	background-color: white;
+}
+
 @media screen and (max-width: 1024px) {
 }
 

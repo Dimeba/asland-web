@@ -36,14 +36,18 @@ export default async function Service({ params }) {
 
 	return (
 		<main>
-			<InvestmentHero investment={investment} />
+			{investment && (
+				<>
+					<InvestmentHero investment={investment} />
 
-			<InvestmentInfo investment={investment} />
+					<InvestmentInfo investment={investment} />
 
-			<Investments
-				investments={investmentsSection.items[0]}
-				highlights={investmentsSection.items[0].fields.highlights}
-			/>
+					<Investments
+						investments={investmentsSection.items[0]}
+						highlights={investmentsSection.items[0].fields.highlights}
+					/>
+				</>
+			)}
 		</main>
 	)
 }

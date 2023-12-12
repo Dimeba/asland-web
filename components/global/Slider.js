@@ -69,35 +69,55 @@ const Slider = ({
 			return () => clearInterval(updateContent)
 		}, [current, setCurrent])
 
+	// Bullets
+	const handleBulletClick = index => {
+		setCurrent(index)
+	}
+
 	return (
-		<div className={styles.slider}>
-			{showArrows && (
-				<div onClick={prevSlide}>
-					<ImageContainer
-						src='/arrow-left.svg'
-						className={styles.sliderArrow}
-						alt='Slider button to the left side'
-					/>
-				</div>
-			)}
+		<>
+			<div className={styles.slider}>
+				{showArrows && (
+					<div onClick={prevSlide}>
+						<ImageContainer
+							src='/arrow-left.svg'
+							className={styles.sliderArrow}
+							alt='Slider button to the left side'
+						/>
+					</div>
+				)}
 
-			<div
-				className={styles.sliderContent}
-				style={showArrows ? { width: 'calc(100% - 4rem)' } : { width: '100%' }}
-			>
-				{children}
+				<div
+					className={styles.sliderContent}
+					style={
+						showArrows ? { width: 'calc(100% - 4rem)' } : { width: '100%' }
+					}
+				>
+					{children}
+				</div>
+
+				{showArrows && (
+					<div onClick={nextSlide}>
+						<ImageContainer
+							src='/arrow-right.svg'
+							className={styles.sliderArrow}
+							alt='Slider button to the right side'
+						/>
+					</div>
+				)}
 			</div>
-
-			{showArrows && (
-				<div onClick={nextSlide}>
-					<ImageContainer
-						src='/arrow-right.svg'
-						className={styles.sliderArrow}
-						alt='Slider button to the right side'
-					/>
-				</div>
-			)}
-		</div>
+			<div className={styles.bullets}>
+				{Array.from({ length: totalSlides }).map((_, index) => (
+					<div
+						key={index}
+						className={`${styles.bullet} ${
+							index === current ? styles.active : ''
+						}`}
+						onClick={() => handleBulletClick(index)}
+					></div>
+				))}
+			</div>
+		</>
 	)
 }
 
