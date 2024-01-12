@@ -59,13 +59,8 @@ const Header = () => {
 					<Hamburger
 						color='#585149'
 						size={24}
-						onToggle={toggled => {
-							if (toggled) {
-								setOpenMenu(true)
-							} else {
-								setOpenMenu(false)
-							}
-						}}
+						toggled={openMenu}
+						toggle={setOpenMenu}
 					/>
 				</div>
 
