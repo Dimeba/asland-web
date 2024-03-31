@@ -93,7 +93,7 @@ const Header = () => {
 					}`}
 				>
 					<Link
-						href='https://aslandcap.junipersquare.com/login'
+						href='https://app.junipersquare.com/login?path=%2Fi%2Faslandcap'
 						aria-label='Investor Login'
 					>
 						<button className={styles.loginButton}>Investor Login</button>
